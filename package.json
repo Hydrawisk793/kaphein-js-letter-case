@@ -1,6 +1,6 @@
 {
     "name": "kaphein-js-letter-case",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A set of utilities for letter case conversions.",
     "author": "Hydarwisk793 <hyw793@gmail.com>",
     "license": "MIT",
@@ -30,7 +30,7 @@
     },
     "bundledDependencies": [],
     "dependencies": {
-        "kaphein-js-type-trait": "~0.1.1"
+        "kaphein-js-type-trait": ">=0.1.1 <0.3.0"
     },
     "devDependencies": {
         "chai": "^4.3.4",
