@@ -1,28 +1,28 @@
-const { assert } = require("chai");
+const { expect } = require("chai");
 
 const { toCapitalizedCase } = require("../../src");
 
 module.exports = function ()
 {
-    it("snake_case to camelCase", function ()
+    it("should convert a snake_case string to a camelCase string.", function ()
     {
-        assert.deepStrictEqual(toCapitalizedCase("", "_"), "");
-        assert.deepStrictEqual(toCapitalizedCase("foo", "_"), "foo");
-        assert.deepStrictEqual(toCapitalizedCase("foo_bar_baz", "_"), "fooBarBaz");
-        assert.deepStrictEqual(toCapitalizedCase("foo_1a", "_"), "foo1a");
-        assert.deepStrictEqual(toCapitalizedCase("foo_1ab_ca", "_"), "foo1abCa");
-        assert.deepStrictEqual(toCapitalizedCase("foo_123ab_ca", "_"), "foo123abCa");
-        assert.deepStrictEqual(toCapitalizedCase("foo_a_123_bc_zx", "_"), "fooA123BcZx");
+        expect(toCapitalizedCase("", "_")).to.equal("");
+        expect(toCapitalizedCase("foo", "_")).to.equal("foo");
+        expect(toCapitalizedCase("foo_bar_baz", "_")).to.equal("fooBarBaz");
+        expect(toCapitalizedCase("foo_1a", "_")).to.equal("foo1a");
+        expect(toCapitalizedCase("foo_1ab_ca", "_")).to.equal("foo1abCa");
+        expect(toCapitalizedCase("foo_123ab_ca", "_")).to.equal("foo123abCa");
+        expect(toCapitalizedCase("foo_a_123_bc_zx", "_")).to.equal("fooA123BcZx");
     });
 
-    it("snake_case to PascalCase", function ()
+    it("should convert a snake_case string to a PascalCase string.", function ()
     {
-        assert.deepStrictEqual(toCapitalizedCase("", "_", { capitalizeInitial : true }), "");
-        assert.deepStrictEqual(toCapitalizedCase("foo", "_", { capitalizeInitial : true }), "Foo");
-        assert.deepStrictEqual(toCapitalizedCase("foo_bar_baz", "_", { capitalizeInitial : true }), "FooBarBaz");
-        assert.deepStrictEqual(toCapitalizedCase("foo_1a", "_", { capitalizeInitial : true }), "Foo1a");
-        assert.deepStrictEqual(toCapitalizedCase("foo_1ab_ca", "_", { capitalizeInitial : true }), "Foo1abCa");
-        assert.deepStrictEqual(toCapitalizedCase("foo_123ab_ca", "_", { capitalizeInitial : true }), "Foo123abCa");
-        assert.deepStrictEqual(toCapitalizedCase("foo_a_123_bc_zx", "_", { capitalizeInitial : true }), "FooA123BcZx");
+        expect(toCapitalizedCase("", "_", { capitalizeInitial : true })).to.equal("");
+        expect(toCapitalizedCase("foo", "_", { capitalizeInitial : true })).to.equal("Foo");
+        expect(toCapitalizedCase("foo_bar_baz", "_", { capitalizeInitial : true })).to.equal("FooBarBaz");
+        expect(toCapitalizedCase("foo_1a", "_", { capitalizeInitial : true })).to.equal("Foo1a");
+        expect(toCapitalizedCase("foo_1ab_ca", "_", { capitalizeInitial : true })).to.equal("Foo1abCa");
+        expect(toCapitalizedCase("foo_123ab_ca", "_", { capitalizeInitial : true })).to.equal("Foo123abCa");
+        expect(toCapitalizedCase("foo_a_123_bc_zx", "_", { capitalizeInitial : true })).to.equal("FooA123BcZx");
     });
 };

@@ -1,28 +1,28 @@
-const { assert } = require("chai");
+const { expect } = require("chai");
 
 const { toDelimiterSeparatedCase } = require("../../src");
 
 module.exports = function ()
 {
-    it("camelCase to kebab-case", function ()
+    it("should convert a camelCase string to a kebab-case string.", function ()
     {
-        assert.deepStrictEqual(toDelimiterSeparatedCase("", "-"), "");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("foo", "-"), "foo");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("fooBarBaz", "-"), "foo-bar-baz");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("foo1a", "-"), "foo-1a");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("foo1abCa", "-"), "foo-1ab-ca");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("foo123abCa", "-"), "foo-123ab-ca");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("fooA123BcZx", "-"), "foo-a-123-bc-zx");
+        expect(toDelimiterSeparatedCase("", "-")).to.equal("");
+        expect(toDelimiterSeparatedCase("foo", "-")).to.equal("foo");
+        expect(toDelimiterSeparatedCase("fooBarBaz", "-")).to.equal("foo-bar-baz");
+        expect(toDelimiterSeparatedCase("foo1a", "-")).to.equal("foo-1a");
+        expect(toDelimiterSeparatedCase("foo1abCa", "-")).to.equal("foo-1ab-ca");
+        expect(toDelimiterSeparatedCase("foo123abCa", "-")).to.equal("foo-123ab-ca");
+        expect(toDelimiterSeparatedCase("fooA123BcZx", "-")).to.equal("foo-a-123-bc-zx");
     });
 
-    it("PascalCase to kebab-case", function ()
+    it("should convert a PascalCase string to a kebab-case string.", function ()
     {
-        assert.deepStrictEqual(toDelimiterSeparatedCase("", "-"), "");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("Foo", "-"), "foo");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("FooBarBaz", "-"), "foo-bar-baz");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("Foo1a", "-"), "foo-1a");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("Foo1abCa", "-"), "foo-1ab-ca");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("Foo123abCa", "-"), "foo-123ab-ca");
-        assert.deepStrictEqual(toDelimiterSeparatedCase("FooA123BcZx", "-"), "foo-a-123-bc-zx");
+        expect(toDelimiterSeparatedCase("", "-")).to.equal("");
+        expect(toDelimiterSeparatedCase("Foo", "-")).to.equal("foo");
+        expect(toDelimiterSeparatedCase("FooBarBaz", "-")).to.equal("foo-bar-baz");
+        expect(toDelimiterSeparatedCase("Foo1a", "-")).to.equal("foo-1a");
+        expect(toDelimiterSeparatedCase("Foo1abCa", "-")).to.equal("foo-1ab-ca");
+        expect(toDelimiterSeparatedCase("Foo123abCa", "-")).to.equal("foo-123ab-ca");
+        expect(toDelimiterSeparatedCase("FooA123BcZx", "-")).to.equal("foo-a-123-bc-zx");
     });
 };
